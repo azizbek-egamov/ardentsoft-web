@@ -16,7 +16,7 @@ export function TeamCarousel() {
   useEffect(() => {
     async function fetchTeam() {
       try {
-        const res = await fetch("http://127.0.0.1:8000/api/team/")
+        const res = await fetch("https://api.ardentsoft.uz/api/team/")
         const data = await res.json()
 
         const formatted = data.map((member: any) => ({

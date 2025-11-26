@@ -17,7 +17,7 @@ export function ProjectCarousel() {
   useEffect(() => {
     async function fetchProjects() {
       try {
-        const res = await fetch("http://127.0.0.1:8000/api/projects/")
+        const res = await fetch("https://api.ardentsoft.uz/api/projects/")
         const data = await res.json()
 
 

@@ -84,14 +84,14 @@ export default function ProjectsPage() {
   useEffect(() => {
     setMounted(true)
 
-    fetch("http://127.0.0.1:8000/api/projects/")
+    fetch("https://api.ardentsoft.uz/api/projects/")
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch((err) => console.error("API error:", err))
   }, [])
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/categories/")
+    fetch("https://api.ardentsoft.uz/api/categories/")
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((err) => console.error("Categories load error:", err))
@@ -103,7 +103,7 @@ export default function ProjectsPage() {
     const params = new URLSearchParams(window.location.search)
     const projectId = params.get("id")
     if (projectId) {
-      fetch(`http://127.0.0.1:8000/api/projects/${projectId}/`)
+      fetch(`https://api.ardentsoft.uz/api/projects/${projectId}/`)
         .then((res) => res.json())
         .then((data) => setSelectedProject(data))
         .catch((err) => console.error("Project load error:", err))
